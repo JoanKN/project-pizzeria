@@ -148,13 +148,13 @@
             // check if the option is not default
             if (!option.default) {
               // add option price to price variable
-              thisProduct.priceElem += option.thisProduct.priceElem;
-            };
+              thisProduct.priceElem += optionId.priceElem;
+            }
           } else {
             // check if the option is default
             if (option.default) {
               // reduce price variable
-              thisProduct.priceElem -= option.thisProduct.priceElem;
+              thisProduct.priceElem -= optionId.priceElem;
             }
           }
 
@@ -164,7 +164,7 @@
         thisProduct.priceElem.innerHTML = price;
       }
     }
-
+  } 
     const app = {
       initMenu: function () {
         const thisApp = this;
@@ -191,5 +191,4 @@
       },
     };
     app.init();
-  }
 }
