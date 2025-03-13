@@ -148,13 +148,13 @@
             // check if the option is not default
             if (!option.default) {
               // add option price to price variable
-              thisProduct.priceElem += optionId.priceElem;
+              price += option.price;
             }
           } else {
             // check if the option is default
             if (option.default) {
               // reduce price variable
-              thisProduct.priceElem -= optionId.priceElem;
+              price -= option.price;
             }
           }
 
