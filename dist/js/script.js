@@ -159,13 +159,12 @@
               price -= option.price;
             }
           }
-          const optionImage = thisProduct.imageWrapper.querySelector('.paramId-optionId');
-          const imageVisible = classNames.menuProduct.imageVisible();
+          const optionImage = thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
           if (optionImage) {
             if (optionSelected) {
-              imageVisible.classList.add('active');
+              optionImage.classList.add('active');
             } else {
-              imageVisible.classList.remove('active');
+              optionImage.classList.remove('active');
             }
           }
         }
