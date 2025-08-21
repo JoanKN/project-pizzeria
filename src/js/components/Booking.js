@@ -95,7 +95,7 @@ class Booking {
         const startHour = utils.hourToNumber(hour);
 
 
-        for (let hourBlock = startHour; hourBlock, startHour + duration; hourBlock += 0.5) {
+        for (let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5) {
             if (typeof thisBooking.booked[date][hourBlock] == 'undefined') {
                 thisBooking.booked[date][hourBlock] = [];
             }
@@ -126,7 +126,7 @@ class Booking {
                 &&
                 thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
             ) {
-                table.classList.add(classNames.bookin.tableBooked);
+                table.classList.add(classNames.booking.tableBooked);
             } else {
                 table.classList.remove(classNames.booking.tableBooked);
             }
@@ -240,7 +240,7 @@ class Booking {
             .then(() => {
                 thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
                 thisBooking.updateDOM();
-            });
+                });
     }
 
 }
