@@ -683,11 +683,19 @@ input.error, select.error {
   top: 0;
   background: #333;
   opacity: 0.4;
+  pointer-events: none;
 }
 .floor-plan [data-table="1"] {
   left: 40px;
   top: 40px;
 }
+
+.floor-plan .table.selected {
+  background-color: #11d33b;
+  color: rgb(243, 8, 145);
+  font-weight: bold;
+}
+
 .floor-plan [data-table="2"] {
   right: 25px;
   top: 25px;

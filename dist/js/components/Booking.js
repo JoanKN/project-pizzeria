@@ -174,31 +174,30 @@ class Booking {
             thisBooking.updateDOM(); // wewnątrz updateDOM resetowany jest selectedTable
         });
 
-        // Obsługa kliknięć w stoliki (delegacja)
         thisBooking.dom.wrapper.addEventListener('click', function (event) {
-            const clickedElem = event.target;
+            const clickedTable = event.target.closest('.table');
+            if (!clickedTable) return;
 
-            if (clickedElem.classList.contains('table')) {
-                const tableId = parseInt(clickedElem.getAttribute(settings.booking.tableIdAttribute));
+            const tableId = parseInt(clickedTable.getAttribute(settings.booking.tableIdAttribute));
 
-                if (clickedElem.classList.contains(classNames.booking.tableBooked)) {
-                    return;
-                }
-
-                if (clickedElem.classList.contains(classNames.booking.tableSelected)) {
-                    clickedElem.classList.remove(classNames.booking.tableSelected);
-                    thisBooking.selectedTable = null;
-                    return;
-                }
-
-                for (let table of thisBooking.dom.tables) {
-                    table.classList.remove(classNames.booking.tableSelected);
-                }
-
-                clickedElem.classList.add(classNames.booking.tableSelected);
-                thisBooking.selectedTable = tableId;
+            if (clickedTable.classList.contains(classNames.booking.tableBooked)) {
+                return;
             }
+
+            if (clickedTable.classList.contains(classNames.booking.tableSelected)) {
+                clickedTable.classList.remove(classNames.booking.tableSelected);
+                thisBooking.selectedTable = null;
+                return;
+            }
+
+            for (let table of thisBooking.dom.tables) {
+                table.classList.remove(classNames.booking.tableSelected);
+            }
+
+            clickedTable.classList.add(classNames.booking.tableSelected);
+            thisBooking.selectedTable = tableId;
         });
+
         thisBooking.dom.form.addEventListener('submit', function (event) {
             event.preventDefault();
             thisBooking.sendBooking();
@@ -240,7 +239,7 @@ class Booking {
             .then(() => {
                 thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
                 thisBooking.updateDOM();
-                });
+            });
     }
 
 }
