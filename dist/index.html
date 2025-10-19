@@ -8,6 +8,7 @@
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
     rel="stylesheet">
+  <script src="https://kit.fontawesome.com/642242742e.js" crossorigin="anonymous"></script>
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
@@ -65,6 +66,7 @@
       </div>
     </div>
   </header>
+
   <div id="pages">
     <section id="home">
       <div class="home-wrapper container"></div>
@@ -75,73 +77,117 @@
     <section id="booking">
       <div class="booking-wrapper container"></div>
     </section>
-
   </div>
-  <script id="template-booking-widget" type="text/x-handlebars-template">
-   <div class="booking-widget">
-     <h2 class="page__title no-spacing">Book a table</h2>
-     <form class="booking-form">
-       <div class="time-picker">
-         <div class="date-picker">
-           <label class="booking-option-title">Pick a date</label>
-           <input type="text" name="date">
-         </div>
-         <div class="hour-picker range-slider">
-             <div class="output"></div>
-             <label class="booking-option-title">Pick a time</label>
-           <input type="range" name="hour" value="12" min="12" max="24" step="0.5">
-         </div>
-       </div>
-       <div class="floor-plan">
-         <div class="object entry">entry</div>
-         <div class="object bar">bar</div>
-         <div class="object table" data-table="1">table-1</div>
-         <div class="object table table--round" data-table="2">table-2</div>
-         <div class="object table" data-table="3">table-3</div>
-       </div>
-       <div class="booking-options"> <!-- options -->
-         <label class="booking-option-title"> <!-- option-row -->
-           People
-           <div class="widget-amount people-amount"> <!-- widget-amount -->
-             <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-             <input class="amount" type="text" name="people" value="1">
-             <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
-           </div>
-         </label>
-         <label class="booking-option-title"> <!-- option-row -->
-           Hours
-           <div class="widget-amount hours-amount"> <!-- widget-amount -->
-             <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-             <input class="amount" type="text" name="hours" value="1">
-             <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
-           </div>
-         </label>
-         <div> <!-- option-row -->
-           <span class="booking-option-title">Starters</span>
-           <div class="checkbox"> <!-- checkbox -->
-             <label>
-               <input type="checkbox" name="starter" value="water">
-               <span class="checkbox__checkmark"></span>
-               Water
-             </label>
-           </div>
-           <div class="checkbox"> <!-- checkbox -->
-             <label>
-               <input type="checkbox" name="starter" value="bread">
-               <span class="checkbox__checkmark"></span>
-               Bread
-             </label>
-           </div>
-         </div>
-       </div>
-       <div class="order-confirmation">
-         <input type="tel" name="phone" placeholder="Your phone">
-         <input type="text" name="address" placeholder="Your address">
-         <button type="submit" class="btn-secondary">Book table</button>
-       </div>
-     </form>
-   </div>
- </script>
+
+  <script id="template-home" type="text/x-handlebars-template">
+    <div class="home">
+      <div class="row">
+        <div class="box1">
+          <a href="#order">
+            <img src="\images/home/assets/pizza-1.jpg">
+            <h2 class="box-title">ORDER ONLINE</h2>
+            <div class="layer">
+              <h2 class="box-title-layer">ORDER ONLINE</h2>
+              <p>Delicious food delivered to your door</p>
+            </div>
+          </a>
+        </div>
+        <div class="box2">
+          <a href="#booking">
+            <img src="\images/home/assets/pizza-2.jpg">
+            <h2 class="box-title">BOOK A TABLE</h2>
+            <div class="layer">
+              <h2 class="box-title-layer">BOOK A TABLE</h2>
+              <p>And say hello</p>
+            </div>
+          </a>
+        </div>
+        <div class="box3">
+          <h2 class="box-title">OPENING HOURS</h2>
+          <p>TUE-SUN, 12PM - 12AM</p>
+        </div>
+      </div>
+      <div class="main-carousel">
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="\images/home/assets/pizza-3.jpg">
+          </div>
+          <div class="carousel-description">
+            <p>DELICIOUS FOOD!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>- Harry Potter</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="\images/home/assets/pizza-3.jpg">
+          </div>
+          <div class="carousel-description">
+            <p>GOOD SNACKS!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>- Angelina Jolie</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="\images/home/assets/pizza-3.jpg">
+          </div>
+          <div class="carousel-description">
+            <p>AMAZING SERVICE!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>- Margaret Osborne</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-4.jpg">
+        </div>
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-5.jpg">
+        </div>
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-6.jpg">
+        </div>
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-7.jpg">
+        </div>
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-8.jpg">
+        </div>
+        <div class="gallery-img">
+          <div class="overlay">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <img src="\images/home/assets/pizza-9.jpg">
+        </div>
+      </div>
+      <div class="link">
+        <a href="#">View more on Instagram</a>
+      </div>
+    </div>
+  </script>
 
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
@@ -250,9 +296,75 @@
     </article> <!-- .product -->
   </script>
 
+  <script id="template-booking-widget" type="text/x-handlebars-template">
+    <div class="booking-widget">
+      <h2 class="page__title no-spacing">Book a table</h2>
+      <form class="booking-form">
+        <div class="time-picker">
+          <div class="date-picker">
+            <label class="booking-option-title">Pick a date</label>
+            <input type="text" name="date">
+          </div>
+          <div class="hour-picker range-slider">
+              <div class="output"></div>
+              <label class="booking-option-title">Pick a time</label>
+            <input type="range" name="hour" value="12" min="12" max="24" step="0.5">
+          </div>
+        </div>
+        <div class="floor-plan">
+          <div class="object entry">entry</div>
+          <div class="object bar">bar</div>
+          <div class="object table" data-table="1">table-1</div>
+          <div class="object table table--round" data-table="2">table-2</div>
+          <div class="object table" data-table="3">table-3</div>
+        </div>
+        <div class="booking-options"> <!-- options -->
+          <label class="booking-option-title"> <!-- option-row -->
+            People
+            <div class="widget-amount people-amount"> <!-- widget-amount -->
+              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+              <input class="amount" type="text" name="people" value="1">
+              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+            </div>
+          </label>
+          <label class="booking-option-title"> <!-- option-row -->
+            Hours
+            <div class="widget-amount hours-amount"> <!-- widget-amount -->
+              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+              <input class="amount" type="text" name="hours" value="1">
+              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+            </div>
+          </label>
+          <div> <!-- option-row -->
+            <span class="booking-option-title">Starters</span>
+            <div class="checkbox"> <!-- checkbox -->
+              <label>
+                <input type="checkbox" name="starter" value="water">
+                <span class="checkbox__checkmark"></span>
+                Water
+              </label>
+            </div>
+            <div class="checkbox"> <!-- checkbox -->
+              <label>
+                <input type="checkbox" name="starter" value="bread">
+                <span class="checkbox__checkmark"></span>
+                Bread
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="order-confirmation">
+          <input type="tel" name="phone" placeholder="Your phone">
+          <input type="text" name="address" placeholder="Your address">
+          <button type="submit" class="btn-secondary">Book table</button>
+        </div>
+      </form>
+    </div>
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="vendor/range-slider.min.js"></script>
+  <script src="vendor/range-slider.min.js" type="module"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
