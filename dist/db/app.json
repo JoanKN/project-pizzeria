@@ -202,65 +202,7 @@
       }
     }
   ],
-  "orders": [
-    {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
-      "totalNumber": 1,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 1
-    },
-    {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
-      "totalNumber": 1,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 2
-    },
-    {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
-      "totalNumber": 1,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 3
-    }
-  ],
+  "orders": [],
   "events": [
     {
       "id": 1,
@@ -321,5 +263,20 @@
       ]
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "date": "2025-10-23",
+      "hour": "16:00",
+      "table": 1,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [
+        "water",
+        "bread"
+      ],
+      "phone": "",
+      "address": "",
+      "id": 1
+    }
+  ]
 }
